@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand text-success" href="/admin">Admin Panel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+      aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/admin/create-exam']">Create Exam</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/admin/list-exam']">List Exam</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <h4> <a class="nav-link text-danger pb-0" [routerLink]="['/']">Exit from panel</a></h4>
+      </form>
+    </div>
+  </div>
+</nav>

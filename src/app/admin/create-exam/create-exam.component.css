@@ -1,0 +1,28 @@
+.container{
+    padding: 0;
+    width: 50rem;
+}
+.articleTextLabel{
+    width: 50rem;
+}
+#articleTitle-select{
+    width: 50rem;
+    border-radius: 0.5rem;
+}
+#article-text{
+    border:2px solid #0dcaf0;
+    border-radius: 0.5rem;
+    width: 50rem;
+    height: 20rem;
+    padding: 2rem;
+    overflow: scroll;
+}
+.questionTextInput{
+    margin-top: 3rem;
+    border:1px solid #f0270d;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+}
+#rightAnswer-select{
+    width: 25rem;
+}

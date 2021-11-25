@@ -1,17 +1,13 @@
 <div class="container">
     <div class="d-flex flex-column align-items-center">
         <div class="form-group">
-            <label for="exampleSelect1" class="form-label mt-4">Titles</label>
-            <select class="form-select" id="articleTitle-select">
+            <label for="exampleSelect1" class="form-label mt-4" >Titles</label>
+            <select class="form-select" id="articleTitle-select"  [(ngModel)]="exam.title" >
                 <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
             </select>
         </div>
         <label class="form-label mt-4 articleTextLabel ml-0">Text</label>
-        <div id="article-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eos eius fugiat sunt,
+        <textarea [(ngModel)]="exam.text" class="form-control"  id="article-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eos eius fugiat sunt,
             eveniet
             natus incidunt nisi molestias tempore tempora porro ut dolorem, veniam ratione dolore amet illum nihil enim
             expedita architecto blanditiis excepturi voluptates vitae aperiam! Iure, assumenda mollitia facilis et
@@ -118,14 +114,15 @@
             Autem, recusandae! Veniam eum mollitia, fugit blanditiis eligendi voluptatum ab quo? Unde cumque maxime
             nihil
             suscipit amet. Maiores expedita eligendi vel quas rerum aut a ipsa repudiandae eveniet? Similique! </div>
-    </div>
+    </textarea>
+
 
     <div *ngFor="let questionNumber of counter(questionQuantity);let i = index;">
         <textarea class="form-control my-3 questionTextInput" id="exampleTextarea" rows="3"
-            placeholder="Question {{i + 1}}" ></textarea> 
+            placeholder="Question {{i + 1}}" [(ngModel)]="exam.questions[i].text" ></textarea> 
         <div class="row flex-wrap justify-content-between">
             <div *ngFor="let optionNumber of counter(optionQuantity);let j = index;" class="col-6">
-                <input type="text" class="form-control my-2" placeholder="{{optionLetters[j]}} ) " id="inputDefault" >
+                <input type="text" class="form-control my-2" placeholder="{{optionLetters[j]}} )" [(ngModel)]="exam.questions[i].options[j].text" >
             </div>
             <div class="d-flex justify-content-center mt-1">
                 <select class="form-select" id="rightAnswer-select">
@@ -137,7 +134,7 @@
         </div>
     </div>
     <div class="d-flex justify-content-center my-4">
-        <button type="button" class="btn btn-lg btn-outline-primary">Create Exam</button>
+        <button type="button" class="btn btn-lg btn-outline-primary" (click)="show()" >Create Exam</button>
     </div>
 
 

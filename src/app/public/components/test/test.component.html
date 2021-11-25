@@ -1,0 +1,40 @@
+<div class="container my-4">
+    <div class="text-center examItem">
+        <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque perferendis minima sequi eveniet
+            ratione voluptatem quo rem. Fugit, aut doloribus.</h2>
+    </div>
+
+    <div class="examItem">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto quibusdam quos beatae laborum, id corporis
+        cumque alias suscipit excepturi nobis, doloremque eum magni accusantium totam veniam iusto optio tenetur
+        perferendis eos. Rerum placeat vero voluptas quae error ut dignissimos ipsam necessitatibus maxime natus quas,
+        eaque obcaecati illum est iure tenetur illo officiis in. Omnis aperiam, alias error delectus quisquam deserunt
+        deleniti aliquam in ratione. Voluptatem provident autem possimus expedita quidem quas distinctio vero quod ipsam
+        deserunt assumenda veritatis nam sunt reprehenderit magnam id vitae, molestiae nihil asperiores, maiores
+        sapiente, quia earum! Quo error quisquam quibusdam, harum a rem et non consequatur dicta, obcaecati voluptates?
+        Error debitis optio cumque alias aspernatur modi necessitatibus, nisi dolore recusandae porro rem culpa in. Rem
+        placeat cupiditate dolore optio reiciendis tenetur asperiores, earum praesentium quo, quia, facilis possimus
+        atque repellat qui! Quibusdam, minima eius corrupti iure odit dolore sit excepturi placeat nesciunt et a at.
+        Modi magnam beatae at, voluptas sapiente quo, saepe iste animi ducimus perspiciatis architecto alias delectus
+        ipsum voluptatum ullam. Accusamus vitae alias atque natus accusantium quidem, quam debitis asperiores
+        dignissimos! Placeat ducimus, commodi distinctio ipsam impedit, odio ipsum ratione accusantium aliquid excepturi
+        porro eius cumque consequatur rerum blanditiis asperiores eveniet ut?
+    </div>
+    <div class="row flex-wrap justify-content-between examItem">
+        <div *ngFor="let question of exam.questions;let i = index" class="col-6 examItem">
+            <div>{{i+1}}) Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, quo! Voluptatibus alias
+                eligendi facere! Molestias labore consectetur inventore totam, amet magni voluptate pariatur suscipit
+                nostrum vitae dolorem dignissimos ullam? Praesentium quod temporibus vel, repellendus et impedit iusto
+                eum alias totam illo, voluptatibus, pariatur fuga? Temporibus sint sequi assumenda explicabo illo.
+            </div>
+            <div *ngFor="let option of question.options;let j = index;" class="form-check examItem">
+                   {{optionLetters[j]}}) <input type="radio" class="form-check-input" name="{{i}}" id="{{i}}" >
+                    Option one is this and that—be sure to include why it's great
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center my-5">
+        <button type="button" class="btn btn-lg btn-outline-success" >Finish Exam</button>
+    </div>
+
+</div>

@@ -8,11 +8,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="table-info">
-              <th scope="row">Info</th>
-              <td>Column content</td>
-              <td>Column content</td>
-              <td><button class="btn btn-sm btn-outline-danger">Delete</button></td>
+            <tr  *ngFor="let exam of exams " class="table-info">
+              <th scope="row">{{exam.id}}</th>
+              <td>{{exam.title}}</td>
+              <td>{{exam.date}} </td>
+              <td><button class="btn btn-sm btn-outline-danger" (click)="deleteExam(exam.id.toString())" >Delete</button></td>
             </tr>
           </tbody>
     </table>

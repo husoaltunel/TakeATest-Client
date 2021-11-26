@@ -4,3 +4,11 @@
 .btn{
     width: 20rem;
 }
+.wrong{
+    background-color: rgb(119, 50, 50);
+    border-radius: 0.5rem;
+}
+.right{
+    background-color:rgb(48, 100, 48);
+    border-radius: 0.5rem;
+}

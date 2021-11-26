@@ -8,10 +8,10 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="table-info">
-              <th scope="row">Info</th>
-              <td><button type="button" class="btn btn-sm btn-outline-success linkButton" [routerLink]="['/test']" >Columsdasdasdasdasdasdasdasdasdasdasdasdasdasdan content</button></td>
-              <td>Column content</td>
+            <tr *ngFor="let exam of exams " class="table-info">
+              <th scope="row">{{exam.id}}</th>
+              <td><button type="button" class="btn btn-sm btn-outline-success linkButton" [routerLink]="['/test/',exam.id]" >{{exam.title}} </button></td>
+              <td>{{exam.date}} </td>
             </tr>
           </tbody>
     </table>

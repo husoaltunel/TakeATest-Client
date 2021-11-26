@@ -4,9 +4,13 @@ export class QuestionModel  {
     id : number
     text :string
     options : OptionModel[]
-    constructor(){
-        this.id = 0,
-        this.text = "",
-        this.options = [];
+    constructor(optionQuantity : number){
+        this.id = 0
+        this.text = ""
+        this.options = []
+
+        for (let index = 0; index < optionQuantity; index++) {
+            this.options[index] = new OptionModel();        
+          }
     }
 }

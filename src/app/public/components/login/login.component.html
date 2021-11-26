@@ -2,15 +2,15 @@
     <div class="card-header text-center text-primary">Login to TakeATest App</div>
     <div class="card-body">
         <div class="form-group">
-            <label class="col-form-label mt-4" for="inputDefault">Username</label>
-            <input type="text" class="form-control" placeholder="Username" id="inputDefault">
+            <label class="col-form-label mt-4" for="inputDefault" >Username</label>
+            <input type="text" class="form-control" placeholder="Username" id="inputDefault" [(ngModel)]="loginInfo.username" >
         </div>
         <div class="form-group">
             <label class="col-form-label mt-4" for="inputDefault">Password</label>
-            <input type="text" class="form-control" placeholder="Password" id="inputDefault">
+            <input type="password" class="form-control" placeholder="Password" id="inputDefault" [(ngModel)]="loginInfo.password" >
         </div>
         <div class="form-group d-flex justify-content-center mt-3">
-            <button type="button" class="btn btn-outline-success">Login</button>
+            <button type="button" class="btn btn-outline-success" (click)="login()" >Login</button>
         </div>
     </div>
 </div>

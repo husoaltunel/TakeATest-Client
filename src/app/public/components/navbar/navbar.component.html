@@ -11,8 +11,11 @@
             <a class="nav-link" [routerLink]="['/take-test']" >Take test</a>
           </li>
         </ul>
+        <form  class="d-flex">
+          <h4> <a class="nav-link text-warning pb-0" [routerLink]="['/admin/create-exam']">Login to admin panel</a></h4>
+        </form>
         <form class="d-flex">
-          <h4> <a class="nav-link text-danger pb-0" [routerLink]="['/admin']">Login to admin panel</a></h4>
+          <h5><a class="nav-link text-danger pb-0" [routerLink]="['']" (click)="logOut()">Logout</a></h5>
         </form>
       </div>
     </div>

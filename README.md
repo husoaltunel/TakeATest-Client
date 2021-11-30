@@ -1,3 +1,5 @@
+![alt text](https://github.com/husoaltunel/TakeATest-Client/blob/master/src/assets/AppView/Ekran%20Al%C4%B1nt%C4%B1s%C4%B1.PNG)
+
 # TakeATest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.7.

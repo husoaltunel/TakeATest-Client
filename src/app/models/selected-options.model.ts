@@ -1,4 +1,4 @@
-export class SelectedOptions{
+export class SelectedOptionsModel{
     options : number[]
 
     constructor(optionQuantity : number){

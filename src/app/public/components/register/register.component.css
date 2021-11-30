@@ -1,0 +1,8 @@
+.card{
+    margin-top: 2rem;
+    width: 25rem;
+    height: 35rem;
+}
+.card-header {
+    font-weight: bold;
+}

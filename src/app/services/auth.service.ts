@@ -5,6 +5,7 @@ import {map} from 'rxjs/operators'
 import { LoginInfoModel } from '../models/loginInfo.model';
 
 import { setLoginStateToLocalStorage, setUserStateToLocalStorage } from './helpers/local-storage-helper';
+import { RegisterModel } from '../models/register.model';
 
 
 
@@ -33,6 +34,9 @@ export class AuthService {
   logOut(){
     localStorage.removeItem('user');
     setLoginStateToLocalStorage(false);
+  }
+  register(model : RegisterModel){
+    return this.http.post(this.path + "register",model);
   }
  
   isLoggedIn(){

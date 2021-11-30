@@ -8,12 +8,12 @@
     </div>
     <form #examForm="ngForm" >
         <div class="row flex-wrap justify-content-between examItem">
-        <div *ngFor="let question of exam.questions;let i = index" class="col-6 examItem">
+        <div *ngFor="let question of exam.questions;let i = index;trackBy : trackByFn" class="col-6 examItem">
             <div>{{i+1}}) {{question.text}}
             </div>
-            <div *ngFor="let option of question.options;let j = index;" class="form-check examItem"   >
+            <div *ngFor="let option of question.options;let j = index;trackBy:trackByFn" class="form-check examItem"  >
                 <div class="{{optionLetters[i]}}{{optionLetters[j]}} radioDiv" >
-                    {{optionLetters[j]}}) <input #option [value]="j"  type="radio" class="form-check-input" name="{{i}}" id="{{i}}" ngModel >
+                    {{optionLetters[j]}}) <input  [value]="j"  type="radio" class="form-check-input" name="{{i}}" id="{{i}}" ngModel (dblclick)="changeChecked($event)" >
                 {{option.text}}
                 </div>
                 

@@ -5,6 +5,7 @@ import { PublicComponent } from './public.component';
 
 const routes: Routes = [
   {path:"" ,component:PublicComponent,loadChildren:()=>import("./components/home/home.module").then(m=> m.HomeModule),canActivate:[AuthGuard]},
+  {path : "register" , loadChildren : ()=> import("./components/register/register.module").then(m=> m.RegisterModule) },
   {path:"login" ,loadChildren:()=>import("./components/login/login.module").then(m=> m.LoginModule)},
   {path:"take-test" ,component:PublicComponent,loadChildren:()=>import("./components/take-test/take-test.module").then(m=> m.TakeTestModule),canActivate:[AuthGuard]},
   {path:"test/:id" ,component:PublicComponent,loadChildren:()=>import("./components/test/test.module").then(m=> m.TestModule),canActivate:[AuthGuard]}

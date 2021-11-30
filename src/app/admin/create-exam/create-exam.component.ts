@@ -5,7 +5,8 @@ import { Article } from 'src/app/models/article.model';
 import { ExamWithQuestionsModel } from 'src/app/models/exam-with-questions.model';
 import { OptionModel } from 'src/app/models/option.model';
 import { QuestionModel } from 'src/app/models/question.model';
-import { SelectedOptions } from 'src/app/models/selected-options.model';
+import { SelectedOptionsModel } from 'src/app/models/selected-options.model';
+
 import { ArticleService } from 'src/app/services/article.service';
 import { ExamService } from 'src/app/services/exam.service';
 import { SweetAlertService } from 'src/app/services/sweet-alert.service';
@@ -23,7 +24,7 @@ export class CreateExamComponent implements OnInit {
   optionLetters: string[];
   articles: Article[];
   selectedArticle : Article;
-  selectedOptions : SelectedOptions;
+  selectedOptions : SelectedOptionsModel;
 
   constructor(private articleService: ArticleService,private examService : ExamService,private sweetAlertService : SweetAlertService) {
     this.questionQuantity = 4;
@@ -31,7 +32,7 @@ export class CreateExamComponent implements OnInit {
     this.exam = new ExamWithQuestionsModel(this.questionQuantity, this.optionQuantity);
     this.optionLetters = optionLetters;
     this.selectedArticle = new Article();
-    this.selectedOptions = new SelectedOptions(this.questionQuantity);
+    this.selectedOptions = new SelectedOptionsModel(this.questionQuantity);
     this.getArticles();
   }
 

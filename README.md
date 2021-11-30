@@ -1,4 +1,13 @@
 ![alt text](https://github.com/husoaltunel/TakeATest-Client/blob/master/src/assets/AppView/Ekran%20Al%C4%B1nt%C4%B1s%C4%B1.PNG)
+![alt text](https://github.com/husoaltunel/TakeATest-Client/blob/master/src/assets/AppView/Ekran%20Al%C4%B1nt%C4%B1s%C4%B11.PNG)
+![alt text](https://github.com/husoaltunel/TakeATest-Client/blob/master/src/assets/AppView/Ekran%20Al%C4%B1nt%C4%B1s%C4%B12.PNG)
+![alt text](https://github.com/husoaltunel/TakeATest-Client/blob/master/src/assets/AppView/Ekran%20Al%C4%B1nt%C4%B1s%C4%B13.PNG)
+![alt text](https://github.com/husoaltunel/TakeATest-Client/blob/master/src/assets/AppView/Ekran%20Al%C4%B1nt%C4%B1s%C4%B14.PNG)
+![alt text](https://github.com/husoaltunel/TakeATest-Client/blob/master/src/assets/AppView/Ekran%20Al%C4%B1nt%C4%B1s%C4%B15.PNG)
+![alt text](https://github.com/husoaltunel/TakeATest-Client/blob/master/src/assets/AppView/Ekran%20Al%C4%B1nt%C4%B1s%C4%B16.PNG)
+![alt text](https://github.com/husoaltunel/TakeATest-Client/blob/master/src/assets/AppView/Ekran%20Al%C4%B1nt%C4%B1s%C4%B17.PNG)
+![alt text](https://github.com/husoaltunel/TakeATest-Client/blob/master/src/assets/AppView/Ekran%20Al%C4%B1nt%C4%B1s%C4%B18.PNG)
+
 
 # TakeATest
 

@@ -8,11 +8,7 @@ export class ExamModel {
     isActive : number
     questions : QuestionModel[]
     constructor(){
-        this.id = 0
-        this.title = ""
-        this.text = ""
-        this.date = ""
-        this.isActive = 1
+
         this.questions = []
     }
 }

@@ -1,4 +1,5 @@
 <div class="container my-4">
+    <div class="alert alert-warning"><h5>You can deselect answers with double click <i class="fas fa-mouse m-2"></i></h5></div>
     <div class="text-center examItem">
         <h2>{{exam.title}} </h2>
     </div>
@@ -12,8 +13,8 @@
             <div>{{i+1}}) {{question.text}}
             </div>
             <div *ngFor="let option of question.options;let j = index;trackBy:trackByFn" class="form-check examItem"  >
-                <div class="{{optionLetters[i]}}{{optionLetters[j]}} radioDiv" >
-                    {{optionLetters[j]}}) <input  [value]="j"  type="radio" class="form-check-input" name="{{i}}" id="{{i}}" ngModel (dblclick)="changeChecked($event)" >
+                <div class="radioDiv{{i}}{{j}}" >
+                    {{optionLetters[j]}}) <input  [value]="j"  type="radio" class="form-check-input" name="{{i}}" id="{{i}}" ngModel (dblclick)="unCheck($event,examForm)" >
                 {{option.text}}
                 </div>
                 

@@ -22,12 +22,14 @@ export class TestComponent implements OnInit {
   optionQuantity: number;
   optionLetters: string[];
   selectedOptions: SelectedOptionsModel;
-  constructor(private route: ActivatedRoute, private examService: ExamService, private el: ElementRef, private sweetAlertService: SweetAlertService,private renderer : Renderer2) {
+  testId: string | null
+  constructor(private route: ActivatedRoute, private examService: ExamService, private el: ElementRef, private sweetAlertService: SweetAlertService, private renderer: Renderer2) {
     this.questionQuantity = 4;
     this.optionQuantity = 4;
     this.exam = new ExamWithQuestionsModel(this.questionQuantity, this.optionQuantity);
     this.optionLetters = optionLetters;
-    this.getExam(this.route.snapshot.paramMap.get('id'))
+    this.testId = this.route.snapshot.paramMap.get('id');
+    this.getExam(this.testId);
     this.selectedOptions = new SelectedOptionsModel(this.questionQuantity);
   }
 
@@ -42,42 +44,71 @@ export class TestComponent implements OnInit {
       }
     })
   }
-  changeChecked(event : any){
-    if(event.target.checked){
-      event.target.checked = false;
+  unCheck(event: any, examForm: NgForm) {
+    let radio = event.target;
+    let radioFormControl = examForm.controls[radio.id];
 
+    if (radio.checked) {
+      radio.checked = false;
+      radioFormControl.patchValue('');
     }
-    
+
   }
-  trackByFn(index: number,el:any): number {
+  trackByFn(index: number, el: any): number {
     return el.id;
   }
   onFormSubmit(examForm: NgForm) {
-    
-    for (let index = 0; index < this.questionQuantity * this.optionQuantity; index++) {
-      let element = this.el.nativeElement.querySelectorAll(`.radioDiv`);
-      this.renderer.removeClass(element[index], "right")
-      this.renderer.removeClass(element[index], "wrong")
-    }
+
+    this.clearAnswersBackground();
+    this.setSelectedOptions(examForm);
+    this.setAnswersBackground(examForm);
+
+  }
+
+  clearAnswersBackground() {
+    let rightRadioDivs = this.el.nativeElement.querySelectorAll(`.right`);
+    let wrongRadioDivs = this.el.nativeElement.querySelectorAll(`.wrong`)
+
+    rightRadioDivs.forEach((el: any) => {
+      this.renderer.removeClass(el, "right")
+    });
+
+    wrongRadioDivs.forEach((el: any) => {
+      this.renderer.removeClass(el, "wrong")
+    });
+
+  }
+  setSelectedOptions(examForm: NgForm) {
+
     for (let index = 0; index < this.questionQuantity; index++) {
-      if(examForm.controls[index].value === '') continue
-      this.selectedOptions.options[index] = examForm.controls[index].value;
-      if (this.exam.questions[index].options[this.selectedOptions.options[index]].isTrue == 1) {
-        let element = this.el.nativeElement.querySelector(`.${optionLetters[index]}${optionLetters[this.selectedOptions.options[index]]}`);
-        element?.classList.add("right");
+      let radioFormControlValue = examForm.controls[index].value;
+      this.selectedOptions.options[index] = radioFormControlValue;
+    }
+
+  }
+  checkSelectedOptionIsTrue(index: number) {
+    let questionOptions = this.exam.questions[index].options;
+    let selectedOption = this.selectedOptions.options[index]
+
+    return questionOptions[selectedOption].isTrue == 1;
+  }
+  setAnswersBackground(examForm: NgForm) {
+    for (let index = 0; index < this.questionQuantity; index++) {
+      let radioFormControlValue = examForm.controls[index].value;
+
+      if (radioFormControlValue === '') continue
+
+      let radioDiv = this.el.nativeElement.querySelector(`.radioDiv${index}${radioFormControlValue}`);
+
+      if (this.checkSelectedOptionIsTrue(index)) {
+
+        radioDiv?.classList.add("right");
       }
       else {
-        let element = this.el.nativeElement.querySelector(`.${optionLetters[index]}${optionLetters[this.selectedOptions.options[index]]}`);
-        element?.classList.add("wrong");
+        radioDiv?.classList.add("wrong");
       }
 
     }
-
-
-
-
-
-
   }
 
 }
